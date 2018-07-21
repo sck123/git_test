@@ -1,4 +1,14 @@
-Git is distributed version control system.
-Git is free software distributed under the GPL.
-Git is mutable index called stage.
-Git tracks changes.
+python中常见问题
+1.python 无法导入自己写入的模块
+解答：文件名不能以数字开头，
+另外默认情况下，命令行中。只是每次会话的第一次运行导入的模块， 在第一次导入之后，
+其他的导入都不会再工作了，甚至在另一个窗口中改变并保存了模块的源代码也不行，因为导入是一个开销很大的操作，导入时必须将模块编译成字节码，并运行他
+from 可以复制模块的属性，import是载入模块
+2、载入模的模块属性可以被修改，即，重用，如：通过import将myfile.py载入，在命令行中使titile=‘The Meaning of Lives’，发现title的值发生了改变，但查看源文件，title还是'The Meaning of Life'。
+3、from 打破了namespace的分隔，可能有变量重叠的风险
+4、reload不具有传递性，不能重载该模块所导入的其他模块
+5、exec(open('filename.py').read()) 可以从交互提示模式启动文件，功能上与ipmport类似但默认情况下，每次通过这种方式调用exec，不会导入模块，只是重新运行文件。但和前面的from一样，他可能会把当前的变量覆盖掉。
+6、python核心数据类型：数字、字符串、列表、字典、元组、文件、集合、其他类型（类型、NONE、bool）、编程单元类型（函数、模块、类）、与实现相关的类型（编译的代码堆栈跟踪）
+7、字符串是单个字符的字符串的序列，其他类型的序列还包括列表和元组：因此字符串包含序列的属性，(1~3)为序列的特性（1）支持假设其中各个元素包含位置顺序的操作;(2)支持分片操作；分片的左边界默认是0,右边界默认是分片序列的长度;(3) 支持使用加号进行合并或者重复;(4)字符串的find方法是一个基本的子字符串查找过程（他将返回一个传入子字符串的偏移，如果没有查找到会返回-1），而字符串的replace方法将会对全局进行搜索和替换，但由于字符串具有不可变性，需要使用其他字符串来接受s.replace的值;（5）字符串还有其他方法如:分隔符分隔，characters.split('separator'),大小写变换（characters.upper();字符串测试（characters.isalpha()),去字符串末尾空格characters.rstrip()和格式化的高级替代操作（可以以一个表达式的形式和一个字符串方法调用形式使用
+8、python支持反向索引： 字符串s的长度为4，则s[-1]=s[3],注意：s[-1:3]=''，s[-2:3]='a'
+9、字符串具有不可变性，事实上，在核心类型上，数字、字符串和元组都是不可变；列表和字典是完全自由的改变aaaa aaa aaa
